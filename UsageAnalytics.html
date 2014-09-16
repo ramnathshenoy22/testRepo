@@ -1,0 +1,100 @@
+<html>
+   <title> Usage Analytics </title>
+   <html lang="en" ng-app="Eggly" ng-controller="myctrl">
+      <head>
+         <meta charset="utf-8">
+         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+         <title>Bootstrap 101 Template</title>
+         <!-- Bootstrap -->
+         <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" />
+         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+         <!--[if lt IE 9]>
+         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+         <![endif]-->
+         <script language="javascript" type="text/javascript">
+            function resizeIframe(obj) {
+            obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+            }
+        </script>
+      </head>
+      <body >
+         <br><br>
+         <div class="jumbotron"  >
+            <h1 >
+               Usage Analytics
+            </h1>
+            <p >Get Usage Data, Usage information, Predict Usage and Lots More...</p>
+         </div>
+         <ul class="nav nav-tabs" role="tablist">
+            <li class="active"><a href="#home" role="tab" data-toggle="tab">Home</a></li>
+            <li><a href="#profile" role="tab" data-toggle="tab">Product Usage (in a month) (Customer)</a></li>
+            <li><a href="#messages" role="tab" data-toggle="tab">Product Usage (Over a Period)(Customer)</a></li>
+            <li><a href="#settings" role="tab" data-toggle="tab">Product Usage Trends (Internal Use)</a></li>
+         </ul>
+         <!-- Tab panes -->
+         <div class="tab-content">
+            <div class="tab-pane active" id="home"> Welcome to the Home Page!</div>
+            <div class="tab-pane" id="profile">
+               <div class="panel panel-primary">
+                  <div class="panel-heading">
+                     <h3 style="color: #FFFFFF; font-size: 13pt" class="panel-title">Product Usage in a month</h3>
+                  </div>
+               </div>
+               <form target="" action="" method="POST" >
+                  <label> Contract Id: <input type="text" name="contractid2" id="contractid2"/></label>
+                  <label> Select Month<input type="text" name="sdate2" id="sdate2" placeholder="Valid Values 1-12"/></label>
+                  <input type="submit" value="SUBMIT" />
+                  <br>
+                  <!--<iframe src="http://www.w3schools.com"/> -->
+               </form>
+            </div>
+            <div class="tab-pane" id="messages">
+               <div class="panel panel-primary">
+                  <div class="panel-heading">
+                     <h3 style="color: #FFFFFF; font-size: 13pt" class="panel-title">Product Usage (Over a period)</h3>
+                  </div>
+               </div>
+               <form target="" action="" method="POST" >
+                  <label> Contract Id: <input type="text" name="contractid3" id="contractid3"/></label>
+                  <label> Start Date :<input type="text" name="sdate"3 id="sdate3" placeholder="dd/mm/yy"/></label>
+                  <label> End Date :<input type="text" name="sdate"3 id="sdate3" placeholder="dd/mm/yy"/></label>
+                  <!--<label> End Date :<input type="text" name="edate" id="edate" placeholder="dd/mm/yy"/></label>-->
+                  <input type="submit" value="SUBMIT" />
+                  <br> 
+                  <!--<iframe src="http://www.w3schools.com" align="top"/> --> 
+               </form>
+            </div>
+            <div class="tab-pane" id="settings">
+               <div class="panel panel-primary">
+                  <div class="panel-heading">
+                     <h3 style="color: #FFFFFF; font-size: 13pt" class="panel-title">Product Usage among all Customers</h3>
+                  </div>
+               </div>
+               <form target="_blank" action=" " method="POST" align="center">
+                <select class="selectpicker">
+                <option>Ion Standard</option>
+                <option>Net Strorage</option>
+                <option>China CDN</option>
+                </select>
+                &nbsp 
+                
+                  <button class="btn btn-primary btn-lg" type="submit"  />See Trends</button>
+                  <br> <br><br>
+                  <!--<iframe src="http://www.w3schools.com" align="top"/>  -->
+               </form>
+            </div>
+         </div>
+         <div>
+        <iframe id='iframe2' src="http://chart.apis.google.com/chart?cht=p&chs=500x200&chtt=PIE+CHART&chts=000000,16&chd=e:TNTNTNGa&chl=NETSTORAGE%7CWAA%7CCERTS%7CDSA&chdl=NETSTORAGE%7CWAA%7CCERTS%7CDSA&chco=4660ED,600B47,29E174,600B47" frameborder="0" style="overflow: hidden; height: 100%;
+        width: 100%; position: absolute;" height="100%" width="100%"></iframe>
+        </div>
+         
+         
+         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+      </body>
+   </html>
