@@ -1,0 +1,127 @@
+<apex:page showHeader="false" sidebar="false" >
+   <html lang="en" ng-app="sbtApp">
+      <head>
+         <!-- Bootstrap -->
+         <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" media="all" rel="stylesheet" />
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+         <title>BootStrapV3 on Visualforce Page by Oyecode</title>
+      </head>
+      <body ng-controller="SbtController as sbt" ng-init="">
+         <div class="jumbotron" style="background-color: #3399FF;">
+            <h2 style="color:#FFFFFF">
+               Set Business Terms
+            </h2>
+            <div ng-repeat="sbtId in sbtIds">
+               {{ sbtMap[sbtId] }}<input type="checkbox" name="sports" ng-model='sbtValue[sbtId]'  />
+            </div>
+            <pre>{{sbtValue | json}}</pre>
+            <p style="color:#FFFFFF">Select the Business Terms here. Click on Preview at the bottom to input the values.</p>
+         </div>
+
+         <div class="panel panel-primary">
+            <div class="panel-heading">
+               <h3 style="color: #FFFFFF; font-size: 13pt" class="panel-title">Agreement Detail</h3>
+            </div>
+         </div>
+         <div class="panel-body">
+            <div class="container">
+               <div class="row">
+                  <div class="col-xs-6">
+                     <table border="0" style="margin-left:-5em">
+                        <tr>
+                           <td style="color:#000000;  font-size: 10pt; font-weight: bold " height="40"> Related Opportunity:</td>
+                           <td style="color:#000000;  font-size: 10pt;" height="40">BT : Flipkart-APS-December 2014 Amended : Change
+                              Business Terms
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="color:#000000;  font-size: 10pt; font-weight: bold" height="40"> Owner:</td>
+                           <td style="color:#000000;  font-size: 10pt;" height="40">Ramnath Shenoy</td>
+                        </tr>
+                        <tr>
+                           <td style="color:#000000;  font-size: 10pt; font-weight: bold " height="40"> Account:</td>
+                           <td style="color:#000000;  font-size: 10pt;" height="40">Flipkart</td>
+                        </tr>
+                     </table>
+                  </div>
+                  <div class="col-xs-6">
+                     <table border="0" style="margin-right:-5em">
+                        <tr>
+                           <td style="color:#000000;  font-size: 10pt; font-weight: bold" height="40"> Status Category:</td>
+                           <td style="color:#000000;  font-size: 10pt;" height="40">Request</td>
+                        </tr>
+                        <tr>
+                           <td style="color:#000000;  font-size: 10pt; font-weight: bold " height="40"> Status:</td>
+                           <td style="color:#000000;  font-size: 10pt;" height="40">Request</td>
+                        </tr>
+                        <tr>
+                           <td style="color:#000000;  font-size: 10pt; font-weight: bold" height="40"> Deal Type:</td>
+                           <td style="color:#000000;  font-size: 10pt;" height="40">Direct</td>
+                        </tr>
+                        <tr>
+                           <td style="color:#000000;  font-size: 10pt; font-weight: bold " height="40"> Price List:</td>
+                           <td style="color:#000000;  font-size: 10pt;" height="40">Arch Team Price List</td>
+                        </tr>
+                     </table>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="panel panel-primary">
+            <div class="panel-heading">
+               <h3 style="color: #FFFFFF; font-size: 13pt" class="panel-title">Business Terms (Requires DD Approval)</h3>
+            </div>
+         </div>
+         <div class="panel-body">
+            <div class="container">
+               <div class="row">
+                  <div class="col-xs-6">
+                     <form target="_blank" action=" " method="POST">
+                        <table class="table table-bordered" border="0" style="margin-left:-5em">
+                           <tr ng-repeat="sbtId in sbtIds">
+                              <td >
+                                 {{ sbtMap[sbtId] }} 
+                              </td>
+                              <td>
+                                 <input type="checkbox" name="sports" ng-model='sbtValue[sbtId]'  /> 
+                              </td>
+                           </tr>
+                           <!--<pre>{{sbtValue | json}}</pre>-->
+                        </table>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <button type="button" class="btn btn-primary btn-lg" style="margin-left:30em">Preview</button>
+         <button type="button" class="btn btn-primary btn-lg">Cancel</button>
+         <br />
+         </div>
+         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-sanitize.min.js"></script>
+         <script>
+            var sbtApp = angular.module('sbtApp', ['ngSanitize'])   
+              .controller('SbtController', function ($scope) {
+              $scope.sbtIds = [];
+              $scope.sbtValue = {};
+              $scope.sbtMap = {'r344t': 'Combined Commitment', 'r3554r': 'Fast and Furious Promotional Language'};
+              
+              angular.forEach($scope.sbtMap, function(value, key) {
+                 $scope.sbtValue[key] = true;
+                 this.push(key);
+              }, $scope.sbtIds);
+            
+            });
+            
+            
+         </script>
+      </body>
+   </html>
+</apex:page>
+
+
+
+
